@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.xw.myfirstapplication">
+    package="com.example.xw.myfirstapplication"
+
+    >
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -11,9 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         >
-
         <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>-->
-
         <!--<uses-permission android:name="android.permission.INTERNET"></uses-permission>-->
         <activity android:name=".MainActivity">
             <intent-filter>

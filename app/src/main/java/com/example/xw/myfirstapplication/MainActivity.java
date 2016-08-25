@@ -1,15 +1,26 @@
 package com.example.xw.myfirstapplication;
 
 import android.content.res.Configuration;
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+
+
+import java.util.List;
+
+import facebooklike.adapter.FeedListAdapter;
+
+import facebooklike.data.FeedItem;
 import slidingmenu.NavigationDrawer;
 
 public class MainActivity extends AppCompatActivity {
 
     private NavigationDrawer navigationDrawer;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +30,15 @@ public class MainActivity extends AppCompatActivity {
         addNavigationDrawer(new NavigationDrawer(this));
         navigationDrawer.display(savedInstanceState);
 
+
+
+
+
     }
+
+
+
+
 
     private void addNavigationDrawer(NavigationDrawer navigationDrawer){
         this.navigationDrawer = navigationDrawer;
