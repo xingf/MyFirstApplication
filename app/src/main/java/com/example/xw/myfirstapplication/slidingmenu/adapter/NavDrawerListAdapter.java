@@ -1,4 +1,4 @@
-package slidingmenu.adapter;
+package com.example.xw.myfirstapplication.slidingmenu.adapter;
 
 
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.example.xw.myfirstapplication.R;
 
-import slidingmenu.model.NavDrawerItem;
+import com.example.xw.myfirstapplication.slidingmenu.model.NavDrawerItem;
 
 /**
  * Created by Administrator on 2016/8/25.

@@ -1,4 +1,4 @@
-package slidingmenu;
+package com.example.xw.myfirstapplication.slidingmenu;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -13,14 +13,14 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import com.example.xw.myfirstapplication.R;
 import java.util.ArrayList;
-import slidingmenu.adapter.NavDrawerListAdapter;
-import slidingmenu.fragments.CommunityFragment;
-import slidingmenu.fragments.FindPeopleFragment;
-import slidingmenu.fragments.HomeFragment;
-import slidingmenu.fragments.PagesFragment;
-import slidingmenu.fragments.PhotosFragment;
-import slidingmenu.fragments.WhatsHotFragment;
-import slidingmenu.model.NavDrawerItem;
+import com.example.xw.myfirstapplication.slidingmenu.adapter.NavDrawerListAdapter;
+import com.example.xw.myfirstapplication.slidingmenu.fragments.CommunityFragment;
+import com.example.xw.myfirstapplication.slidingmenu.fragments.FindPeopleFragment;
+import com.example.xw.myfirstapplication.slidingmenu.fragments.HomeFragment;
+import com.example.xw.myfirstapplication.slidingmenu.fragments.PagesFragment;
+import com.example.xw.myfirstapplication.slidingmenu.fragments.PhotosFragment;
+import com.example.xw.myfirstapplication.slidingmenu.fragments.WhatsHotFragment;
+import com.example.xw.myfirstapplication.slidingmenu.model.NavDrawerItem;
 
 
 public class NavigationDrawer {
@@ -162,22 +162,22 @@ public class NavigationDrawer {
         Fragment fragment = null;
         switch (position) {
             case 0:
-                fragment = new HomeFragment();
+                fragment =  HomeFragment.getHomeFragment();
                 break;
             case 1:
-                fragment = new FindPeopleFragment();
+                fragment = FindPeopleFragment.getFindPeopleFragment();
                 break;
             case 2:
-                fragment = new PhotosFragment();
+                fragment = PhotosFragment.getPhotosFragment();
                 break;
             case 3:
-                fragment = new CommunityFragment();
+                fragment = CommunityFragment.getCommunityFragment();
                 break;
             case 4:
-                fragment = new PagesFragment();
+                fragment = PagesFragment.getPagesFragment();
                 break;
             case 5:
-                fragment = new WhatsHotFragment();
+                fragment = WhatsHotFragment.getWhatsHotFragment();
                 break;
 
             default:

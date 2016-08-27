@@ -1,37 +1,42 @@
-package facebooklike.app;
+package com.example.xw.myfirstapplication.facebooklike.network;
 
-import android.app.Application;
 import android.text.TextUtils;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+import com.example.xw.myfirstapplication.MyApplication;
+import com.example.xw.myfirstapplication.facebooklike.volley.LruBitmapCache;
 
-import facebooklike.volley.LruBitmapCache;
+/**
+ * Created by Administrator on 2016/8/27.
+ */
+public class MyNetwork {
+    public static final String TAG = MyApplication.getInstance().getSuperSimpleName();
 
-public class AppController extends Application {
-
-    public static final String TAG = AppController.class.getSimpleName();
 
     private RequestQueue mRequestQueue;
     private ImageLoader mImageLoader;
     LruBitmapCache mLruBitmapCache;
 
-    private static AppController mInstance;
+   private static MyNetwork mNetwork = null;
+   private MyNetwork(){
+       mNetwork = this;
+   }
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        mInstance = this;
-    }
 
-    public static synchronized AppController getInstance() {
-        return mInstance;
+    public static synchronized MyNetwork getNetwork() {
+
+        if(mNetwork == null){
+            mNetwork = new MyNetwork();
+        }
+        return mNetwork;
     }
 
     public RequestQueue getRequestQueue() {
         if (mRequestQueue == null) {
-            mRequestQueue = Volley.newRequestQueue(getApplicationContext());
+            mRequestQueue = Volley.newRequestQueue(MyApplication.getInstance().getApplicationContext());
         }
 
         return mRequestQueue;

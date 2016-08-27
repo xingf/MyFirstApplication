@@ -1,4 +1,4 @@
-package slidingmenu.fragments;
+package com.example.xw.myfirstapplication.slidingmenu.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import com.example.xw.myfirstapplication.R;
 
 public class WhatsHotFragment extends Fragment {
 
+    private static WhatsHotFragment mWhatsHotFragment = null;
     public WhatsHotFragment(){}
 
 
@@ -20,5 +21,12 @@ public class WhatsHotFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_whats_hot, container, false);
 
         return rootView;
+    }
+
+    public static WhatsHotFragment getWhatsHotFragment(){
+        if(mWhatsHotFragment == null){
+            mWhatsHotFragment = new WhatsHotFragment();
+        }
+        return mWhatsHotFragment;
     }
 }

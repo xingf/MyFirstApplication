@@ -1,4 +1,4 @@
-package slidingmenu.fragments;
+package com.example.xw.myfirstapplication.slidingmenu.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import com.example.xw.myfirstapplication.R;
 
 public class PhotosFragment extends Fragment {
 
+    private static PhotosFragment mPhotosFragment = null;
     public PhotosFragment(){}
 
     @Override
@@ -19,5 +20,11 @@ public class PhotosFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_photos, container, false);
 
         return rootView;
+    }
+    public static PhotosFragment getPhotosFragment(){
+        if(mPhotosFragment == null){
+            mPhotosFragment = new PhotosFragment();
+        }
+        return mPhotosFragment;
     }
 }

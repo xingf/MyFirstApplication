@@ -1,4 +1,4 @@
-package facebooklike.data;
+package com.example.xw.myfirstapplication.facebooklike.data;
 
 public class FeedItem {
     private int id;

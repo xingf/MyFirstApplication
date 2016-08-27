@@ -1,4 +1,4 @@
-package facebooklike.adapter;
+package com.example.xw.myfirstapplication.facebooklike.adapter;
 
 
 
@@ -20,15 +20,16 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.example.xw.myfirstapplication.R;
 
-import facebooklike.app.AppController;
-import facebooklike.data.FeedItem;
-import facebooklike.FeedImageView;
+import com.example.xw.myfirstapplication.facebooklike.data.FeedItem;
+import com.example.xw.myfirstapplication.facebooklike.FeedImageView;
+import com.example.xw.myfirstapplication.facebooklike.network.MyNetwork;
 
 public class FeedListAdapter extends BaseAdapter {
     private Activity activity;
     private LayoutInflater inflater;
     private List<FeedItem> feedItems;
-    ImageLoader imageLoader = AppController.getInstance().getImageLoader();
+    ImageLoader imageLoader = MyNetwork.getNetwork().getImageLoader();
+            //AppController.getInstance().getImageLoader();
 
     public FeedListAdapter(Activity activity, List<FeedItem> feedItems) {
         this.activity = activity;
@@ -60,7 +61,8 @@ public class FeedListAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.feed_item, null);
 
         if (imageLoader == null)
-            imageLoader = AppController.getInstance().getImageLoader();
+            imageLoader = MyNetwork.getNetwork().getImageLoader();
+                    //AppController.getInstance().getImageLoader();
 
         TextView name = (TextView) convertView.findViewById(R.id.name);
         TextView timestamp = (TextView) convertView

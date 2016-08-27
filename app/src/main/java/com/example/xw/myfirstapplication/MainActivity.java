@@ -4,39 +4,38 @@ import android.content.res.Configuration;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListView;
 
 
-import java.util.List;
-
-import facebooklike.adapter.FeedListAdapter;
-
-import facebooklike.data.FeedItem;
-import slidingmenu.NavigationDrawer;
+import com.example.xw.myfirstapplication.slidingmenu.NavigationDrawer;
 
 public class MainActivity extends AppCompatActivity {
 
     private NavigationDrawer navigationDrawer;
 
-
+    private static MainActivity mMainActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.v("MainActivity", "onCreate() START");
         super.onCreate(savedInstanceState);
+        mMainActivity = this;
         setContentView(R.layout.activity_main);
 
         addNavigationDrawer(new NavigationDrawer(this));
         navigationDrawer.display(savedInstanceState);
 
-
+        Log.v("MainActivity", "onCreate() END");
 
 
 
     }
 
-
+    public static MainActivity getInstance(){
+        return mMainActivity;
+    }
 
 
 

@@ -1,4 +1,4 @@
-package slidingmenu.model;
+package com.example.xw.myfirstapplication.slidingmenu.model;
 
 /**
  * Created by Administrator on 2016/8/25.

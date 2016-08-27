@@ -1,4 +1,4 @@
-package slidingmenu.fragments;
+package com.example.xw.myfirstapplication.slidingmenu.fragments;
 
 
         import android.app.Fragment;
@@ -11,6 +11,7 @@ package slidingmenu.fragments;
 
 public class CommunityFragment extends Fragment {
 
+    private static CommunityFragment mCommunityFragment = null;
     public CommunityFragment(){}
 
     @Override
@@ -18,7 +19,14 @@ public class CommunityFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_community, container, false);
-
+        mCommunityFragment = this;
         return rootView;
     }
+    public static CommunityFragment getCommunityFragment(){
+        if(mCommunityFragment == null){
+            mCommunityFragment = new CommunityFragment();
+        }
+        return mCommunityFragment;
+    }
+
 }
