@@ -16,9 +16,7 @@ import com.example.xw.myfirstapplication.R;
 
 import com.example.xw.myfirstapplication.slidingmenu.model.NavDrawerItem;
 
-/**
- * Created by Administrator on 2016/8/25.
- */
+
 public class NavDrawerListAdapter extends BaseAdapter {
     private Context context;
     private ArrayList<NavDrawerItem> navDrawerItems;
