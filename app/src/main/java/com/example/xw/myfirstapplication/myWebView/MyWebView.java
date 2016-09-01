@@ -1,7 +1,6 @@
-package com.example.xw.myfirstapplication.webviewpage;
+package com.example.xw.myfirstapplication.myWebView;
 
 import android.content.Context;
-import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.webkit.WebView;
 

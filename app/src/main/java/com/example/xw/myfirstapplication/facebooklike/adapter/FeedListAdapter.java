@@ -29,7 +29,7 @@ public class FeedListAdapter extends BaseAdapter {
     private LayoutInflater inflater;
     private List<FeedItem> feedItems;
     ImageLoader imageLoader = MyNetwork.getNetwork().getImageLoader();
-            //AppController.getInstance().getImageLoader();
+
 
     public FeedListAdapter(Activity activity, List<FeedItem> feedItems) {
         this.activity = activity;
@@ -62,7 +62,7 @@ public class FeedListAdapter extends BaseAdapter {
 
         if (imageLoader == null)
             imageLoader = MyNetwork.getNetwork().getImageLoader();
-                    //AppController.getInstance().getImageLoader();
+
 
         TextView name = (TextView) convertView.findViewById(R.id.name);
         TextView timestamp = (TextView) convertView

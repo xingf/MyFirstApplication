@@ -1,4 +1,4 @@
-package com.example.xw.myfirstapplication.slidingmenu.model;
+package com.example.xw.myfirstapplication.slidingmenu.drawerItem;
 
 /**
  * Created by Administrator on 2016/8/25.

@@ -1,4 +1,4 @@
-package com.example.xw.myfirstapplication.slidingmenu.fragments;
+package com.example.xw.myfirstapplication.fragments;
 
 
         import android.app.Fragment;

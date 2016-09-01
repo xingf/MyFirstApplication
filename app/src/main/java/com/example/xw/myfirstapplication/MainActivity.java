@@ -13,34 +13,27 @@ import com.example.xw.myfirstapplication.slidingmenu.NavigationDrawer;
 
 public class MainActivity extends AppCompatActivity {
 
-    private NavigationDrawer navigationDrawer;
-
     private static MainActivity mMainActivity;
-
+    private NavigationDrawer mNavigationDrawer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.v("MainActivity", "onCreate() START");
+
         super.onCreate(savedInstanceState);
         mMainActivity = this;
         setContentView(R.layout.activity_main);
-
-        addNavigationDrawer(new NavigationDrawer(this));
-        navigationDrawer.display(savedInstanceState);
-
-        Log.v("MainActivity", "onCreate() END");
-
-
-
+        mNavigationDrawer = new NavigationDrawer();
+        addNavigationDrawer(mNavigationDrawer);
+        mNavigationDrawer.display(savedInstanceState);
     }
 
-    public static MainActivity getInstance(){
+    public static MainActivity getInstanceOfMainActivity(){
+        return mMainActivity;
+    }
+    public static AppCompatActivity getInstanceOFAppCompatActivity(){
         return mMainActivity;
     }
 
-
-
     private void addNavigationDrawer(NavigationDrawer navigationDrawer){
-        this.navigationDrawer = navigationDrawer;
         navigationDrawer.init();
     }
 
@@ -54,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // toggle nav drawer on selecting action bar app icon/title
-        if (navigationDrawer.getDrawerToggle().onOptionsItemSelected(item)) {
+        if (mNavigationDrawer.getDrawerToggle().onOptionsItemSelected(item)) {
             return true;
         }
         // Handle action bar actions click
@@ -72,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         // if nav drawer is opened, hide the action items
-        boolean drawerOpen = navigationDrawer.getDrawerLayout().isDrawerOpen(navigationDrawer.getDrawerList());
+        boolean drawerOpen = mNavigationDrawer.getDrawerLayout().isDrawerOpen(mNavigationDrawer.getDrawerList());
         menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
         return super.onPrepareOptionsMenu(menu);
     }
@@ -86,19 +79,18 @@ public class MainActivity extends AppCompatActivity {
      * When using the ActionBarDrawerToggle, you must call it during
      * onPostCreate() and onConfigurationChanged()...
      */
-
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         // Sync the toggle state after onRestoreInstanceState has occurred.
-        navigationDrawer.getDrawerToggle().syncState();
+        mNavigationDrawer.getDrawerToggle().syncState();
     }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         // Pass any configuration change to the drawer toggls
-        navigationDrawer.getDrawerToggle().onConfigurationChanged(newConfig);
+        mNavigationDrawer.getDrawerToggle().onConfigurationChanged(newConfig);
     }
 
 }

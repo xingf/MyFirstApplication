@@ -11,20 +11,23 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.example.xw.myfirstapplication.MainActivity;
 import com.example.xw.myfirstapplication.R;
+
 import java.util.ArrayList;
+
 import com.example.xw.myfirstapplication.slidingmenu.adapter.NavDrawerListAdapter;
-import com.example.xw.myfirstapplication.slidingmenu.fragments.CommunityFragment;
-import com.example.xw.myfirstapplication.slidingmenu.fragments.FindPeopleFragment;
-import com.example.xw.myfirstapplication.slidingmenu.fragments.HomeFragment;
-import com.example.xw.myfirstapplication.slidingmenu.fragments.PagesFragment;
-import com.example.xw.myfirstapplication.slidingmenu.fragments.PhotosFragment;
-import com.example.xw.myfirstapplication.slidingmenu.fragments.WhatsHotFragment;
-import com.example.xw.myfirstapplication.slidingmenu.model.NavDrawerItem;
+import com.example.xw.myfirstapplication.fragments.CommunityFragment;
+import com.example.xw.myfirstapplication.fragments.Metric;
+import com.example.xw.myfirstapplication.fragments.HomeFragment;
+import com.example.xw.myfirstapplication.fragments.About;
+import com.example.xw.myfirstapplication.fragments.PhotosFragment;
+import com.example.xw.myfirstapplication.fragments.WhatsHotFragment;
+import com.example.xw.myfirstapplication.slidingmenu.drawerItem.NavDrawerItem;
 
 
 public class NavigationDrawer {
-
 
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
@@ -45,15 +48,15 @@ public class NavigationDrawer {
 
     private AppCompatActivity cxt;
 
-    public NavigationDrawer(AppCompatActivity cxt){
-        this.cxt = cxt;
+    public NavigationDrawer() {
+        this.cxt = MainActivity.getInstanceOFAppCompatActivity();
     }
+
     @SuppressWarnings("ResourceType")
 
     public void init() {
 
-        mTitle = mDrawerTitle = cxt.getTitle();
-
+        mTitle = mDrawerTitle = cxt.getResources().getString(R.string.navigation_name);
         // load slide menu items
         navMenuTitles = cxt.getResources().getStringArray(R.array.nav_drawer_items);
 
@@ -79,7 +82,6 @@ public class NavigationDrawer {
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(4, -1)));
         // What's hot, We  will add a counter here
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuIcons.getResourceId(5, -1), true, "50+"));
-
 
         // Recycle the typed array
         navMenuIcons.recycle();
@@ -121,7 +123,7 @@ public class NavigationDrawer {
 
     }
 
-    public void display(Bundle savedInstanceState){
+    public void display(Bundle savedInstanceState) {
         if (savedInstanceState == null) {
             // on first time display view for first nav item
             displayView(0);
@@ -141,19 +143,19 @@ public class NavigationDrawer {
         }
     }
 
-    public ActionBarDrawerToggle getDrawerToggle(){
-        return  mDrawerToggle;
+    public ActionBarDrawerToggle getDrawerToggle() {
+        return mDrawerToggle;
     }
 
-    public DrawerLayout getDrawerLayout(){
+    public DrawerLayout getDrawerLayout() {
         return mDrawerLayout;
     }
 
-    public ListView getDrawerList(){
+    public ListView getDrawerList() {
         return mDrawerList;
     }
 
-    public String getNavMenuTitle(int position){
+    public String getNavMenuTitle(int position) {
         return navMenuTitles[position];
     }
 
@@ -162,10 +164,10 @@ public class NavigationDrawer {
         Fragment fragment = null;
         switch (position) {
             case 0:
-                fragment =  HomeFragment.getHomeFragment();
+                fragment = HomeFragment.getHomeFragment();
                 break;
             case 1:
-                fragment = FindPeopleFragment.getFindPeopleFragment();
+                fragment = Metric.getFindPeopleFragment();
                 break;
             case 2:
                 fragment = PhotosFragment.getPhotosFragment();
@@ -174,7 +176,7 @@ public class NavigationDrawer {
                 fragment = CommunityFragment.getCommunityFragment();
                 break;
             case 4:
-                fragment = PagesFragment.getPagesFragment();
+                fragment = About.getPagesFragment();
                 break;
             case 5:
                 fragment = WhatsHotFragment.getWhatsHotFragment();

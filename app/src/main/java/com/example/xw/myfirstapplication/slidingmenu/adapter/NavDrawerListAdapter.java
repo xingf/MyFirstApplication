@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.example.xw.myfirstapplication.R;
 
-import com.example.xw.myfirstapplication.slidingmenu.model.NavDrawerItem;
+import com.example.xw.myfirstapplication.slidingmenu.drawerItem.NavDrawerItem;
 
 
 public class NavDrawerListAdapter extends BaseAdapter {

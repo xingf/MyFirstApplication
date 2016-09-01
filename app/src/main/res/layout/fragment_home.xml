@@ -3,7 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <WebView  xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:id="@+id/webview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical" >
@@ -14,7 +19,7 @@
             android:layout_height="wrap_content"
             android:divider="@null" />
 
-    </LinearLayout>
+    </LinearLayout>-->
 
    <!-- <TextView
         android:id="@+id/txtLabel"

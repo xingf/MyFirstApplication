@@ -1,24 +1,18 @@
-package com.example.xw.myfirstapplication.slidingmenu.fragments;
+package com.example.xw.myfirstapplication.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 import com.example.xw.myfirstapplication.R;
-import com.example.xw.myfirstapplication.webviewpage.MyWebView;
-import com.example.xw.myfirstapplication.webviewpage.MyWebViewClient;
 
-public class FindPeopleFragment extends Fragment {
+public class Metric extends Fragment {
 
-    private static FindPeopleFragment mFindPeopleFragment = null;
-    public FindPeopleFragment(){};
-    private static String url = "http://139.30.157.241/labo";
-    WebView myWebView;
+    private static Metric mMetric = null;
+    public Metric(){};
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -26,12 +20,7 @@ public class FindPeopleFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_find_people, container, false);
 
-        //For WebView Start
-         myWebView = (WebView) rootView.findViewById(R.id.webview);
-        myWebView.loadUrl(url);
-        myWebView.setWebViewClient(new WebViewClient());
 
-        //For WebView End
 
 
 
@@ -50,10 +39,10 @@ public class FindPeopleFragment extends Fragment {
         return super.onKeyDown(keyCode, event);
     }*/
 
-    public static FindPeopleFragment getFindPeopleFragment(){
-        if(mFindPeopleFragment == null){
-            mFindPeopleFragment = new FindPeopleFragment();
+    public static Metric getFindPeopleFragment(){
+        if(mMetric == null){
+            mMetric = new Metric();
         }
-        return mFindPeopleFragment;
+        return mMetric;
     }
 }

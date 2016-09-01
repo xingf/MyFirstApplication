@@ -1,4 +1,4 @@
-package com.example.xw.myfirstapplication.slidingmenu.fragments;
+package com.example.xw.myfirstapplication.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -8,11 +8,11 @@ import android.view.ViewGroup;
 
 import com.example.xw.myfirstapplication.R;
 
-public class PagesFragment extends Fragment {
+public class About extends Fragment {
 
-    private static PagesFragment mPagesFragment = null;
+    private static About mAbout = null;
 
-    public PagesFragment(){}
+    public About(){}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -22,10 +22,10 @@ public class PagesFragment extends Fragment {
 
         return rootView;
     }
-    public static PagesFragment getPagesFragment(){
-        if(mPagesFragment == null){
-            mPagesFragment = new PagesFragment();
+    public static About getPagesFragment(){
+        if(mAbout == null){
+            mAbout = new About();
         }
-        return mPagesFragment;
+        return mAbout;
     }
 }

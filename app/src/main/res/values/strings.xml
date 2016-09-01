@@ -7,12 +7,13 @@
     <string name="hello_world">Hello world!</string>
     <string name="drawer_open">Slider Menu Opened</string>
     <string name="drawer_close">Slider Menu Closed</string>
+    <string name="navigation_name">Navigation</string>
 
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">
         <item>Home</item>
-        <item>Find People</item>
-        <item>Photos</item>
+        <item>Metric</item>
+        <item>About</item>
         <item>Communities</item>
         <item>Pages</item>
         <item>What\'s Hot</item>
