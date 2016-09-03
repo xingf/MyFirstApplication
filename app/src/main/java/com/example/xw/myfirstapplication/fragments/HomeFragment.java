@@ -1,26 +1,13 @@
 package com.example.xw.myfirstapplication.fragments;
 
-
 import android.os.Bundle;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-
 import android.app.Fragment;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
-
-import com.example.xw.myfirstapplication.MainActivity;
 import com.example.xw.myfirstapplication.R;
-
-import java.util.List;
-
-import com.example.xw.myfirstapplication.facebooklike.adapter.FeedListAdapter;
-import com.example.xw.myfirstapplication.facebooklike.data.FeedItem;
 import com.example.xw.myfirstapplication.myWebView.MyWebViewClient;
 
 
@@ -28,7 +15,7 @@ public class HomeFragment extends Fragment {
 
     private static HomeFragment mHomeFragment = null;
     private static Metric mMetric = null;
-    private static String url = "http://139.30.154.159/labo/";
+    private static String url = "http://139.30.154.180/labo/";
 
     WebView myWebView;
     public HomeFragment(){}
